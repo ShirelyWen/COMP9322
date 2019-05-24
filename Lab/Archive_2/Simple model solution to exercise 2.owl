@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#"
+     xml:base="http://adage.cse.unsw.edu.au/teaching/analytic-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#dependentVar -->
+
+    <owl:ObjectProperty rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#dependentVar">
+        <rdfs:domain rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model"/>
+        <rdfs:range rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#independentVar -->
+
+    <owl:ObjectProperty rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#independentVar">
+        <rdfs:domain rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model"/>
+        <rdfs:range rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#hasFloatValue -->
+
+    <owl:DatatypeProperty rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#hasFloatValue">
+        <rdfs:domain rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model -->
+
+    <owl:Class rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model"/>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable -->
+
+    <owl:Class rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#M1 -->
+
+    <owl:NamedIndividual rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#M1">
+        <rdf:type rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model"/>
+        <dependentVar rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Y"/>
+        <independentVar rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#X"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#M2 -->
+
+    <owl:NamedIndividual rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#M2">
+        <rdf:type rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#M3 -->
+
+    <owl:NamedIndividual rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#M3">
+        <rdf:type rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#X -->
+
+    <owl:NamedIndividual rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#X">
+        <rdf:type rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Y -->
+
+    <owl:NamedIndividual rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Y">
+        <rdf:type rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Z -->
+
+    <owl:NamedIndividual rdf:about="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Z">
+        <rdf:type rdf:resource="http://adage.cse.unsw.edu.au/teaching/analytic-ontology#Variable"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
