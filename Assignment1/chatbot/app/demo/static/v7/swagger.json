@@ -1,0 +1,42 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Book an appointment with a dentist",
+    "version": "1.0.0",
+    "title": "Chatbot"
+  },
+  "basePath": "/v7",
+  "paths": {
+    "/chatbot": {
+      "post": {
+        "summary": "get information of patient",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "greetings",
+            "description": "client response",
+            "schema": {
+              "type": "object",
+              "required": [
+                "message"
+              ],
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Appointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          }
+        }
+      }
+    }
+  }
+}

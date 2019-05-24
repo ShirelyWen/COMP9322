@@ -1,0 +1,68 @@
+swagger: "2.0"
+info:
+  description: "Book an appointment with a doctor"
+  version: "1.0.0"
+  title: "Doctor Appointment"
+basePath: "/v5"
+schemes: 
+  - https
+paths:
+  /doctor/information:
+    post:
+      summary: Creates doctor information
+      parameters:
+        - in: body
+          name: doctor information
+          description: Create information for a doctor
+          schema:
+            type: object
+            required: 
+              - name
+              - location
+              - specialization
+              - gender
+            properties:
+              name:
+                type: string
+              location:
+                type: string
+              specialization:
+                type: string
+              gender:
+                type: string
+      tags:
+        - Information
+      
+      responses:
+        200:
+          description: The timeslot is created
+    
+  /doctor/getinformation:
+    get:
+      summary: Gets the doctor information
+      tags: 
+        - Information
+      consumes:
+        - application/json
+      parameters:
+        - in: query
+          name: doctorName
+          description: The doctor name
+          required: true
+          type: string
+        
+      responses:
+        200:
+          description: The doctor information is here!
+        400:
+          description: "Invalid name supplied"
+          
+  /doctor/available:
+    get:
+      summary: Get all the available doctors in the clinic
+      tags: 
+        - Available
+      responses:
+        200:
+          description: The available doctor in the clinic
+     
