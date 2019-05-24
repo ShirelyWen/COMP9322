@@ -1,0 +1,235 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Book an appointment with a dentist",
+    "version": "1.0.0",
+    "title": "Timeslot Service"
+  },
+  "basePath": "/v6",
+  "paths": {
+    "/timeslots": {
+      "post": {
+        "summary": "Creates a timeslot",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "timeslot",
+            "description": "Create a timeslot",
+            "schema": {
+              "type": "object",
+              "required": [
+                "doctorID",
+                "doctorName",
+                "day",
+                "hour",
+                "type",
+                "statusFlag",
+                "clientName"
+              ],
+              "properties": {
+                "doctorID": {
+                  "type": "integer"
+                },
+                "doctorName": {
+                  "type": "string"
+                },
+                "day": {
+                  "type": "string"
+                },
+                "hour": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "statusFlag": {
+                  "type": "string"
+                },
+                "clientName": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "Appointments"
+        ],
+        "responses": {
+          "200": {
+            "description": "The timeslot is created"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get avaliable timeslots for a doctor for chatbot",
+        "tags": [
+          "Appointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful!"
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "doctorName",
+            "required": true,
+            "type": "string",
+            "description": "the name of the doctor"
+          }
+        ]
+      }
+    },
+    "/timeslots/{doctorName}": {
+      "get": {
+        "summary": "Get avaliable timeslots for a doctor for doctor api",
+        "tags": [
+          "Available"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "doctorName",
+            "description": "The Dentist Id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The available time are here!"
+          },
+          "400": {
+            "description": "Invalid name supplied"
+          }
+        }
+      }
+    },
+    "/timeslots/reserve": {
+      "get": {
+        "summary": "reserve timeslot",
+        "tags": [
+          "Appointments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful booked!"
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "clientName",
+            "required": true,
+            "type": "string",
+            "description": "the name of the client"
+          },
+          {
+            "in": "query",
+            "name": "doctorName",
+            "type": "string",
+            "required": true,
+            "description": "the doctor would like to book"
+          },
+          {
+            "in": "query",
+            "name": "timeID",
+            "type": "integer",
+            "required": true,
+            "description": "time id would like to book"
+          }
+        ]
+      }
+    },
+    "/timeslots/cancel": {
+      "get": {
+        "tags": [
+          "Cancel"
+        ],
+        "summary": "cancel the appointment",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "clientName",
+            "required": true,
+            "type": "string",
+            "description": "the name used to book"
+          },
+          {
+            "in": "query",
+            "name": "doctorName",
+            "type": "string",
+            "required": true,
+            "description": "the doctor booked"
+          },
+          {
+            "in": "query",
+            "name": "timeID",
+            "type": "integer",
+            "required": true,
+            "description": "the time id booked"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "You have cancelled this appointment."
+          },
+          "400": {
+            "description": "Invalid doctor name or timeslot id supplied"
+          }
+        }
+      }
+    },
+    "/timeslots/check": {
+      "get": {
+        "tags": [
+          "CheckAvailable"
+        ],
+        "summary": "check whether a time is available",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "doctorName",
+            "required": true,
+            "type": "string",
+            "description": "the name of the doctor"
+          },
+          {
+            "in": "query",
+            "name": "day",
+            "required": true,
+            "type": "string",
+            "description": "day"
+          },
+          {
+            "in": "query",
+            "name": "hour",
+            "required": true,
+            "type": "string",
+            "description": "hour"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string",
+            "description": "am or pm"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "This time is available."
+          },
+          "400": {
+            "description": "Unavailable time."
+          }
+        }
+      }
+    }
+  }
+}
